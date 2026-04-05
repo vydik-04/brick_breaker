@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Breaker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background:#06122b;">
+
+    <div id="gameContainer" style="
+        position: relative;
+        width: 550px;
+        margin: 50px auto;
+    ">
+        <div id="videoContainer" style="
+            display:none; 
+            position:absolute; 
+            top:0; 
+            left:0; 
+            width:550px; 
+            height:400px; 
+            z-index:3; 
+            background:black;
+            overflow:hidden;
+        ">
+            <video id="winVideo" style="width:100%; height:100%; object-fit:cover; opacity:0.6;" muted playsinline loop>
+                <source src="win.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div id="finalText" style="
+            display:none;
+            position:absolute;
+            top:40%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            color:white;
+            font-size:20px;
+            font-weight:bold;
+            z-index:10;
+            text-align:center;
+            line-height:1.6;
+            text-shadow: 2px 2px 4px #000;
+        ">
+            🔥 Congratulations! 🔥<br>
+            You have completed all levels!<br>
+            <span style="font-size:16px; font-weight:normal;">If you wish to play again Press <b>R</b></span>
+        </div>
+
+        <canvas id="gameCanvas" width="550" height="400" style="position:relative; z-index:2; border: 2px solid #1a2a4a;"></canvas>
+
+        <div id="gameOverGif" style="
+            display:none;
+            position:absolute;
+            left:50%;
+            top:65%;
+            transform:translate(-50%, -50%);
+            z-index:15; 
+        ">
+            <img src="gameover.gif" width="150">
+        </div>
+
+        <div id="levelCompleteGif" style="
+            display:none;
+            position:absolute;
+            left:50%;
+            top:65%;
+            transform:translate(-50%, -50%);
+            z-index:15;
+        ">
+            <img src="levelup.gif" width="150">
+        </div>
+
+        <div id="finalWinGif" style="
+            display:none;
+            position:absolute;
+            left:50%;
+            top:65%;
+            transform:translate(-50%, -50%);
+            z-index:15;
+        ">
+            <img src="win.gif" width="180">
+        </div>
+
+        <canvas id="fireworksCanvas" style="
+            display:none;
+            position:absolute;
+            top:0;
+            left:0;
+            pointer-events:none;
+            z-index: 5;
+        "></canvas>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
